@@ -13,6 +13,7 @@ var Slizzard = Class.extend({
       self._updAll(self._sd);
     });
     $(window).resize(function () {
+      self.checkWidth();
       self._updAllOffsets(self._sd);
       self._updAll(self._sd);
     });
@@ -36,6 +37,17 @@ var Slizzard = Class.extend({
     }
   },
 
+  checkWidth: function () {
+    if(this.minWidth > 0) {
+      var width = $(window).width();
+      if(width >= this.minWidth && this.disabled) {
+        this.enable();
+      } else if (width < this.minWidth && !this.disabled) {
+        this.disable();
+      }
+    }
+  },
+
   disabled: true,
 
   _sd: {
@@ -44,6 +56,7 @@ var Slizzard = Class.extend({
     wheight: 0
   },
   _slizzards: [],
+  minWidth: 0,
 
   _updAllOffsets: function () {
     if(this.disabled) return false;
@@ -61,4 +74,4 @@ var Slizzard = Class.extend({
       this._slizzards[i]._upd(this._sd);
     }
   }
-});
+})
