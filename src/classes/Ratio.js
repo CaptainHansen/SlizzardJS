@@ -15,6 +15,6 @@ var SlizzardRatio = _SlizzardBase.extend({
   },
 
   reset: function () {
-    this.$el.css({'transform': 'translate3d(0, 0, 0);'});
+    this.$el.css({'transform': 'translate3d(0, 0, 0)'});
   }
 })

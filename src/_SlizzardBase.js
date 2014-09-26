@@ -55,7 +55,7 @@ var _SlizzardBase = Class.extend({
       this._hidden = false;
     }
     if(this.moveParent)
-      this.$el.parent().css({'transform': 'translate3d(0, 0, 0);'});
+      this.$el.parent().css({'transform': 'translate3d(0, 0, 0)'});
     this.reset();
   }
 });
